@@ -9,9 +9,6 @@ namespace DataStructure
         public List<Book> books = new List<Book>();
 
 
-        
-        
-        
         public List<Book> FindAllBooksByName(string name)
         {
             List<Book> newbooks = new List<Book>();
@@ -54,7 +51,7 @@ namespace DataStructure
               {
                foreach (Book book in books)
                 {
-                 if (book.Name.Contains(search))
+                 if (book.Name.Contains(name))
                     {
                        books.Remove(book);
                         return;
@@ -85,19 +82,19 @@ namespace DataStructure
             {
                 if (book.Name.Contains(search) )
                 {
-                    filteredBook.Add(book);
+                    filteredbooks.Add(book);
                 }
                 if(book.AuthorName.Contains(search))
                 {
-                     filteredBook.Add(book);
+                     filteredbooks.Add(book);
                 }  
                 if(book.Count.Contains(search))
                 {
-                     filteredBook.Add(book);
+                     filteredbooks.Add(book);
                 }   
                 
             }
-            return filteredBook;
+            return filteredbooks;
         }
         
 //         public List<Book> SearchBooks(string search)
@@ -144,12 +141,13 @@ namespace DataStructure
     
         
     
+
         public void RemoveByCode(int no)
         {
             List<Book> filteredbooks = new List<Book>();
             foreach (Book book in books)
             {
-                if (book.No.Contains(no))
+                if (book.No==no)
                 {
                     books.Remove(book);
                     return;
@@ -157,22 +155,6 @@ namespace DataStructure
                
                     
             }
-//         public void RemoveByCode(int no)
-//         {
-//             List<Book> filteredbooks = new List<Book>();
-//             foreach (Book book in books)
-//             {
-//                 if (book.No==no)
-//                 {
-//                     books.Remove(book);
-//                     return;
-//                 }
-               
-                    
-//             }
-
-
-
 
         }
     }
