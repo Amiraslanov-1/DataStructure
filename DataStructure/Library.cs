@@ -9,14 +9,16 @@ namespace DataStructure
         public List<Book> books = new List<Book>();
 
 
-
+        
+        
+        
         public List<Book> FindAllBooksByName(string name)
         {
             List<Book> newbooks = new List<Book>();
 
             foreach (Book book in books)
             {
-                if (book.Name == name)
+                if (book.Name.Contains(name))
                 {
                     newbooks.Add(book);
                 }
@@ -25,50 +27,107 @@ namespace DataStructure
 
         }
 
-        //Elave ozumden yeqinki buna gore basl kesmersiz :)
+//         public List<Book> FindAllBooksByName(string name)
+//         {
+//             List<Book> newbooks = new List<Book>();
+
+//             foreach (Book book in books)
+//             {
+//                 if (book.Name == name)
+//                 {
+//                     newbooks.Add(book);
+//                 }
+//             }
+//             return newbooks;
+
+//         }
+
+        //Elave ozumden yeqinki buna gore basl kesmersiz,Add ilede yaza bilerdim :)
         public void AddBook(Book book)
         {
             books.Add(book);
         }
 
 
-        public void RemoveAllBookByName(string name)
-        {
-            foreach (Book book in books)
-            {
-                if (book.Name == name)
+        
+         public void RemoveAllBookByName(string name)
+              {
+               foreach (Book book in books)
                 {
-                    books.Remove(book);
-                    Console.WriteLine("1");
-                    return;
+                 if (book.Name.Contains(search))
+                    {
+                       books.Remove(book);
+                        return;
+                    }
                 }
-            }
 
-        }
+            }   
+//         public void RemoveAllBookByName(string name)
+//         {
+//             foreach (Book book in books)
+//             {
+//                 if (book.Name == name)
+//                 {
+//                     books.Remove(book);
+//                     return;
+//                 }
+//             }
 
+//         }
+
+
+       
         public List<Book> SearchBooks(string search)
         {
             List<Book> filteredbooks = new List<Book>();
+
             foreach (Book book in books)
             {
-                if (book.Name == search)
+                if (book.Name.Contains(search) )
                 {
-
-                    filteredbooks.Add(book);
+                    filteredBook.Add(book);
                 }
-                else if (book.AuthorName == search)
+                if(book.AuthorName.Contains(search))
                 {
-                    filteredbooks.Add(book);
-                }
-                else if (book.Count == search)
+                     filteredBook.Add(book);
+                }  
+                if(book.Count.Contains(search))
                 {
-                    filteredbooks.Add(book);
-                }
-
+                     filteredBook.Add(book);
+                }   
+                
             }
-            return filteredbooks;
-
+            return filteredBook;
         }
+        
+//         public List<Book> SearchBooks(string search)
+//         {
+//             List<Book> filteredbooks = new List<Book>();
+//             foreach (Book book in books)
+//             {
+//                 if (book.Name == search)
+//                 {
+
+//                     filteredbooks.Add(book);
+//                 }
+//                 else if (book.AuthorName == search)
+//                 {
+//                     filteredbooks.Add(book);
+//                 }
+//                 else if (book.Count == search)
+//                 {
+//                     filteredbooks.Add(book);
+//                 }
+
+//             }
+//             return filteredbooks;
+
+//         }
+        
+        
+        
+        
+        
         public List<Book> FindAllBooksByPageCountRange(int minCount, int maxCount)
         {
             List<Book> filteredbooks = new List<Book>();
@@ -76,18 +135,21 @@ namespace DataStructure
             {
                 if (book.PageCount >= minCount && book.PageCount <= maxCount)
                 {
-                    Console.WriteLine(1);
+                   
                     filteredbooks.Add(book);
                 }
             }
             return filteredbooks;
         }
+    
+        
+    
         public void RemoveByCode(int no)
         {
             List<Book> filteredbooks = new List<Book>();
             foreach (Book book in books)
             {
-                if (book.No==no)
+                if (book.No.Contains(no))
                 {
                     books.Remove(book);
                     return;
@@ -95,6 +157,19 @@ namespace DataStructure
                
                     
             }
+//         public void RemoveByCode(int no)
+//         {
+//             List<Book> filteredbooks = new List<Book>();
+//             foreach (Book book in books)
+//             {
+//                 if (book.No==no)
+//                 {
+//                     books.Remove(book);
+//                     return;
+//                 }
+               
+                    
+//             }
 
 
 
