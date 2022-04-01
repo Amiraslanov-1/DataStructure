@@ -42,10 +42,17 @@ namespace DataStructure
             };
             Book book5 = new Book();
 
-            library.AddBook(book1);
-            library.AddBook(book2);
-            library.AddBook(book3);
-            library.AddBook(book4);
+            
+            library.books.Add(book1);
+            library.books.Add(book2);
+            library.books.Add(book3);
+            library.books.Add(book4);
+         
+            
+             // library.AddBook(book1);
+            // library.AddBook(book2);
+           // library.AddBook(book3);
+          // library.AddBook(book4);
 
             //Console.WriteLine(book5.No);
 
