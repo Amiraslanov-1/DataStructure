@@ -18,7 +18,7 @@ namespace DataStructure
         public string Name { get; set; }
         public string AuthorName { get; set; }
         public int PageCount;
-        public string Count { get; }
+        public string Count { get }
 
 
 
